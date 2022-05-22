@@ -41,9 +41,12 @@ struct CocktailService{
                 let imageURL = decodedData.drinks[index].strDrinkThumb
                 let ingredient1 = decodedData.drinks[index].strIngredient1
                 let ingredient2 = decodedData.drinks[index].strIngredient2
-                let ingredient3 = decodedData.drinks[index].strIngredient3 
+                let ingredient3 = decodedData.drinks[index].strIngredient3
+                let ingredient4 = decodedData.drinks[index].strIngredient4
+                let ingredient5 = decodedData.drinks[index].strIngredient5
+                let ingredient6 = decodedData.drinks[index].strIngredient6
                 
-                let cocktail = Cockatil(id: id, name: name, instruction: instruction, imageURL: imageURL, ingredient1: ingredient1, ingredient2: ingredient2, ingredient3: ingredient3)
+                let cocktail = Cockatil(id: id, name: name, instruction: instruction, imageURL: imageURL, ingredient1: ingredient1, ingredient2: ingredient2, ingredient3: ingredient3,ingredient4: ingredient4, ingredient5: ingredient5, ingredient6: ingredient6)
                 
                 cocktails.append(cocktail)
             }

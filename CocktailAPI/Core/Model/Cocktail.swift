@@ -14,8 +14,12 @@ struct Cockatil{
     var name: String
     var instruction: String
     var imageURL: String
-    var ingredient1: String
-    var ingredient2: String
+    
+    var ingredient1: String?
+    var ingredient2: String?
     var ingredient3: String?
+    var ingredient4: String?
+    var ingredient5: String?
+    var ingredient6: String?
     
 }
