@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Cockatil{
+struct Cockatil: Identifiable{
     
     var id: String
     var name: String
