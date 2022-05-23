@@ -25,17 +25,20 @@ struct CocktailDetailsView: View {
 
                 HStack{
                     IngredientView(ingredient: cocktail.ingredient1,
-                                   color: Color.blue)
+                                   color: getColor(cocktail.ingredient1 ?? "", Color.blue))
                     IngredientView(ingredient: cocktail.ingredient2,
-                                   color: Color.yellow)
+                                   color: getColor(cocktail.ingredient2 ?? "", Color.yellow))
                     IngredientView(ingredient: cocktail.ingredient3,
-                                   color: Color.green)
+                                   color: getColor(cocktail.ingredient3 ?? "", Color.green))
+                    
+                }
+                HStack{
                     IngredientView(ingredient: cocktail.ingredient4,
-                                   color: Color.red)
+                                   color: getColor(cocktail.ingredient4 ?? "", Color.red))
                     IngredientView(ingredient: cocktail.ingredient5,
-                                   color: Color.purple)
+                                   color: getColor(cocktail.ingredient5 ?? "", Color.purple))
                     IngredientView(ingredient: cocktail.ingredient6,
-                                   color: Color.orange)
+                                   color: getColor(cocktail.ingredient6 ?? "", Color.orange))
                 }
                 Text(cocktail.instruction)
                     .multilineTextAlignment(.center)
@@ -54,3 +57,5 @@ struct CocktailDetailsView_Previews: PreviewProvider {
         CocktailDetailsView(cocktail: previewCocktail)
     }
 }
+
+

@@ -26,19 +26,19 @@ struct CocktailRowView: View {
                     .font(.title).bold()
                 HStack{
                     IngredientView(ingredient: cocktail.ingredient1,
-                                   color: Color.blue)
+                                   color: getColor(cocktail.ingredient1 ?? "", Color.blue))
                     IngredientView(ingredient: cocktail.ingredient2,
-                                   color: Color.yellow)
+                                   color: getColor(cocktail.ingredient2 ?? "", Color.yellow))
                     IngredientView(ingredient: cocktail.ingredient3,
-                                   color: Color.green)
+                                   color: getColor(cocktail.ingredient3 ?? "", Color.green))
                 }
                 HStack{
                     IngredientView(ingredient: cocktail.ingredient4,
-                                   color: Color.red)
+                                   color: getColor(cocktail.ingredient4 ?? "", Color.red))
                     IngredientView(ingredient: cocktail.ingredient5,
-                                   color: Color.purple)
+                                   color: getColor(cocktail.ingredient5 ?? "", Color.purple))
                     IngredientView(ingredient: cocktail.ingredient6,
-                                   color: Color.orange)
+                                   color: getColor(cocktail.ingredient6 ?? "", Color.orange))
                     
                 }
             }
@@ -51,20 +51,5 @@ struct CocktailRowView_Previews: PreviewProvider {
     static var previews: some View {
         let previewCocktail = Cockatil(id: "1234", name: "Mohito", instruction: "", imageURL: "https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg", ingredient1: "vodka", ingredient2: "lemon", ingredient3: "lime", ingredient4: "tonic")
         CocktailRowView(cocktail: previewCocktail)
-    }
-}
-
-struct IngredientView: View {
-    
-    var ingredient: String?
-    var color: Color
-    
-    var body: some View {
-        Text(ingredient ?? "")
-            .font(.title2)
-            .padding(3)
-            .background(color)
-            .cornerRadius(10)
-            .foregroundColor(.white)
     }
 }
