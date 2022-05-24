@@ -15,6 +15,7 @@ struct Cockatil: Identifiable{
     var instruction: String
     var imageURL: String
     
+    
     var ingredient1: String?
     var ingredient2: String?
     var ingredient3: String?
@@ -22,4 +23,5 @@ struct Cockatil: Identifiable{
     var ingredient5: String?
     var ingredient6: String?
     
+ 
 }

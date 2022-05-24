@@ -16,23 +16,26 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ScrollView{
-            LazyVStack{
-                Divider()
-                ForEach(viewModel.cocktails){cocktail in
-                    NavigationLink{
-                        CocktailDetailsView(cocktail: cocktail)
-                    }label: {
-                        VStack{
-                            CocktailRowView(cocktail: cocktail)
-                            Divider()
+        VStack {
+            SearchBarView(text: $viewModel.searchText)
+            ScrollView{
+                LazyVStack{
+                    
+                    ForEach(viewModel.serchableCocktails){cocktail in
+                        NavigationLink{
+                            CocktailDetailsView(cocktail: cocktail)
+                        }label: {
+                            VStack{
+                                CocktailRowView(cocktail: cocktail)
+                                Divider()
+                            }
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
+            .navigationBarTitle("Cocktails")
         }
-        .navigationBarTitle("Cocktails")
     }
 }
 
